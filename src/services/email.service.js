@@ -57,6 +57,7 @@ If you did not request any password resets, then ignore this email.`;
  * @returns {Promise}
  */
 const sendVerificationEmail = async (userBody) => {
+  const subject = `Message from ${userBody.name}`;
 
   const text = `${userBody.message} name: ${userBody.name}, email: ${userBody.email}`;
   await sendEmail('vishalashu251001@gmail.com', subject, text);
