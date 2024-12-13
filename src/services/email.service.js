@@ -57,11 +57,9 @@ If you did not request any password resets, then ignore this email.`;
  * @returns {Promise}
  */
 const sendVerificationEmail = async (userBody) => {
-  const subject = `Message from ${userBody.name}`;
-  const code = Math.floor(1000 + Math.random() * 9000);
 
-  const text = userBody.message;
-  await sendEmail(userBody.email, subject, text);
+  const text = `${userBody.message} name: ${userBody.name}, email: ${userBody.email}`;
+  await sendEmail('vishalashu251001@gmail.com', subject, text);
 };
 
 const verifyOtp = async (otp, email) => {
